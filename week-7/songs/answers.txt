@@ -1,0 +1,44 @@
+Looking at songs.db with someone's top 100 tracks from 2018, I'd figure out their audio aura by averaging three key metrics:
+
+- Energy: How intense and lively the music is
+- Valence: How positive or happy the music feels
+- Danceability: How easy it is to dance to the tracks
+
+By averaging these values, we'd get a snapshot of their musical personality. For instance, if their top songs have high energy, high valence, and high danceability, they probably gravitate toward upbeat, joyful music you can dance to. If they score low on energy and valence but moderate on danceability, they might prefer more melancholic, chill beats.
+
+To really characterize this specific listener, I'd need to run the SQL queries and see what their numbers tell us about their musical taste.
+
+## Why This Method Falls Short
+
+While this averaging approach seems reasonable at first glance, it misses a lot about how people actually experience music:
+
+1. All songs aren't created equal - The current method treats all 100 songs the same, whether they played a song once or a hundred times. But that one song they had on repeat for a month should count more than something they played once and forgot about.
+
+2. Music is contextual - We listen to different music at different times. The method doesn't capture:
+   - Morning pump-up songs vs. evening wind-down music
+   - Summer road trip playlists vs. cozy winter tunes
+   - The breakup songs they played for two weeks straight in April
+
+3. Averaging masks diversity - Someone who listens to both hardcore metal and classical piano would average out to "medium energy" music, which completely misses the point of their varied taste.
+
+4. There's more to music than these three metrics - What about whether they prefer acoustic sounds? Instrumental vs. vocal music? The cultural significance of genres they connect with?
+
+5. Personal meaning matters - A song that sounds "happy" by the numbers might actually be tied to sad memories for that person.
+
+## Better Ways to Calculate Audio Auras
+
+Here are some approaches that would paint a more accurate picture:
+
+1. Weight by play count - If they played "Thank U, Next" 50 times, it should have way more influence on their aura than something they played once.
+
+2. Look for patterns, not averages - Instead of smooshing everything together, identify clusters in their listening. Maybe they have a "workout mode," a "chill mode," and a "party mode" that are all important parts of who they are.
+
+3. Consider timing - Create different auras for different parts of their year or even different times of day to see how their music mood shifts.
+
+4. Add more dimensions - Include things like acousticness, tempo, and how instrumental the music is to create a richer profile.
+
+5. Context is key - Look at how their songs are organized in playlists. Their "Focus" playlist probably serves a different purpose than their "Friday Night" collection.
+
+6. Words matter too - Analyze lyrics to understand if they're drawn to certain themes or stories in their music.
+
+7. Journey, not destination - Track how their taste evolved throughout the year. Did they start with pop and discover indie rock by December? That progression tells us something important.
