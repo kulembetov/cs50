@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Artur Kulembetov</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="constants.js"></script>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://avatars.githubusercontent.com/u/56837366?v=4" alt="Artur Kulembetov" class="navbar-brand-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- header -->
+    <header class="page-header py-5">
+        <div class="container">
+            <h1 class="animate-fade-in">Get in Touch</h1>
+            <p class="lead animate-fade-in-delay">Let's discuss your project or collaboration opportunities</p>
+        </div>
+    </header>
+
+    <!-- contact section -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4">
+                    <div class="contact-info animate-slide-up">
+                        <h2 class="mb-4">Contact Information</h2>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p><a href="#" id="email-link"></a></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Location</h3>
+                            <p id="location-text"></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <h3>Availability</h3>
+                            <p id="availability-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form animate-slide-up">
+                        <h2 class="mb-4">Send a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Enter subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
