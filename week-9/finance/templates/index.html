@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title">Portfolio Value</h3>
+                <div class="display-4 mb-2 font-monospace">{{ grand_total | usd }}</div>
+                <p class="text-secondary mb-0">Available Cash: <span class="font-monospace">{{ cash | usd }}</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title mb-4">Quick Actions</h3>
+                <div class="d-grid gap-4">
+                    <a href="/quote" class="btn btn-secondary">
+                        <i class="fas fa-search me-2"></i>Get Quote
+                    </a>
+                    <a href="/buy" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart me-2"></i>Buy Stock
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title mb-4">Your Holdings</h3>
+        {% if stocks %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stocks %}
+                    <tr>
+                        <td class="font-monospace">{{ stock.symbol }}</td>
+                        <td>{{ stock.name }}</td>
+                        <td class="font-monospace">{{ stock.shares }}</td>
+                        <td class="font-monospace">{{ stock.price | usd }}</td>
+                        <td class="font-monospace">{{ stock.total | usd }}</td>
+                        <td class="text-end">
+                            <div class="d-flex gap-2 justify-content-start">
+                                <form action="/sell" method="post" class="mb-0">
+                                    <input name="symbol" type="hidden" value="{{ stock.symbol }}">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </form>
+                                <a href="/quote?symbol={{ stock.symbol }}" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center text-secondary py-5">
+            <i class="fas fa-chart-line fa-3x mb-3"></i>
+            <h4>No stocks yet</h4>
+            <p class="mb-3">Start building your portfolio by buying some stocks</p>
+            <a href="/quote" class="btn btn-primary">Get Started</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} 
